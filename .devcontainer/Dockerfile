@@ -1,14 +1,6 @@
 # syntax=docker/dockerfile:1.3-labs
 
-FROM ghcr.io/void-linux/void-linux:20230204rc01-thin-x86_64
-RUN <<EOF
-xbps-install -Syu
-xbps-install -Syu
-xbps-install -Syu bash less ncurses-base shadow curl python3 tar gzip findutils  util-linux   gleam erlang nodejs git
-chsh -s /bin/bash root
-rm var/cache/xbps/*
-EOF
-
-ENV HOME=/root
-
-CMD [ "sleep", "infinity" ]
+FROM mcr.microsoft.com/devcontainers/base:alpine
+RUN apk add gleam erlang
+RUN wget -O rebar3 https://s3.amazonaws.com/rebar3/rebar3 && chmod 777 ./rebar3 && ./rebar3 local install && rm ./rebar3
+RUN export PATH=$PATH:~/.cache/rebar3/bin
