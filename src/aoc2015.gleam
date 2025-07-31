@@ -1,6 +1,5 @@
 import gleam/io
-import day01
 
 pub fn main() {
-    
+  io.println("Hello")
 }

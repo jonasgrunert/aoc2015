@@ -1,2 +1,2 @@
 FROM erlang:27-alpine
-RUN apk update && apk upgrade && apk add bash gleam
+RUN apk update && apk upgrade && apk add bash && wget -O gleam.tar.gz https://github.com/gleam-lang/gleam/releases/download/v1.11.1/gleam-v1.11.1-x86_64-unknown-linux-musl.tar.gz && tar -xf gleam.tar.gz -C /usr/local/bin && rm gleam.tar.gz
