@@ -1,5 +1,6 @@
 import gleam/io
+import day01
 
-pub fn main() -> Nil {
-  io.println("Hello from aoc2015!")
+pub fn main() {
+    
 }
