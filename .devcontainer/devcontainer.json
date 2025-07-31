@@ -4,6 +4,9 @@
     "dockerfile": "Dockerfile"
   },
   "remoteUser": "root",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": "1.18"
+  },
   "customizations": {
     "vscode": {
       "extensions": ["gleam.gleam"]
