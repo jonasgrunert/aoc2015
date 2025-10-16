@@ -1,5 +1,6 @@
-import day02
 import day01
+import day02
+import day03
 import gleam/io
 import gleam/list
 import gleam/option
@@ -94,7 +95,7 @@ fn render_result(r: option.Option(helper.TestResult)) -> String {
 }
 
 pub fn main() -> Nil {
-  [day01.day(), day02.day()]
+  [day01.day(), day02.day(), day03.day()]
   |> list.flat_map(test_day)
   |> list.map(render_result)
   |> list.each(io.print)

@@ -1,5 +1,6 @@
 import day01
 import day02
+import day03
 import gleam/io
 import gleam/list
 import gleam/option
@@ -18,14 +19,14 @@ fn execute_day(t: helper.Task) -> String {
   <> {
     result2
     |> option.map(fn(r) {
-      "\nDay " <> t.day <> " Part 02: " <> r |> result.unwrap("Error\n")
+      "\nDay " <> t.day <> " Part 02: " <> r |> result.unwrap("Error") <> "\n"
     })
     |> option.unwrap("\n")
   }
 }
 
 pub fn main() {
-  [day01.day(), day02.day()]
+  [day01.day(), day02.day(), day03.day()]
   |> list.map(execute_day)
   |> list.each(io.print)
 }
